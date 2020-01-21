@@ -3,16 +3,7 @@ export function goToWebsite() {
     browser.url(browser.options.baseUrl);
 }
 
-export function getPageTitle() {
-    return browser.getTitle();
-}
-
-export function getHeader() {
-    $(".main-heading").waitForDisplayed();
-    return $(".main-heading").getText();
-}
-
-export function enterSelection(postcode) {
+export function setPostcode(postcode) {
     $("#your-postcode").waitForDisplayed();
     const elem = $("#your-postcode");
     elem.setValue(postcode)
@@ -21,6 +12,15 @@ export function enterSelection(postcode) {
     browser.waitUntil(() => {
         return $("#change-postcode").getText() === 'Change postcode'
     }, 5000, 'expected Change postcode');
+}
+
+export function resetPostcode() {
+    $("#change-postcode").waitForDisplayed();
+    $("#change-postcode").click();
+}
+
+export function enterSelection(postcode) {
+    setPostcode(postcode);
     $("#goto-your-supplier-details").waitForDisplayed();
     $("#goto-your-supplier-details").click();
     browser.waitUntil(() => {

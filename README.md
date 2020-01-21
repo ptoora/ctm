@@ -1,6 +1,6 @@
-# Comparethemarket Scenarios
+# CTM Scenarios
 
-*Run some sample tests across Chrome and Firefox*
+*Run some sample tests in Chrome
 
 ## Design
 * NPM for Javascript
@@ -10,13 +10,13 @@
 * Page Object pattern
 
 ## Run Instructions
-* git clone https://github.com/ptoora/adl.git
-* cd adl 
+* git clone https://github.com/ptoora/ctm.git
+* cd ctm 
 * npm install 
-* BASEURL=https://www.google.com npm test
-* nb. BASEURL is injected to support testiong against different environments
+* BASEURL=https://energy.comparethemarket.com/energy/v2/?AFFCLIE=TSTT npm test
+* nb. BASEURL is injected to support testing against different environments
 
 ## Notes for improvement
 1. Abstract Webdriver.io to support switching drivers
-2. Not use built-in WDIO Page Object as they add a lot of ceremony
+2. Not used built-in WDIO Page Object as they add a lot of ceremony
 3. Capture screenshots
